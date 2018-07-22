@@ -1,25 +1,31 @@
 import React from "react";
 import Helmet from "react-helmet";
+import PostListing from "../components/PostListing/PostListing";
+import SEO from "../components/SEO/SEO";
 import config from "../../data/SiteConfig";
 
-class Index extends React.Component {
+class Blog extends React.Component {
   render() {
+    const postEdges = this.props.data.allMarkdownRemark.edges;
+    const fileEdges = this.props.data.allFile.edges;
     return (
       <div className="index-container">
         <Helmet>
           <title>{config.siteTitle}</title>
           <link rel="canonical" href={`${config.siteUrl}`} />
         </Helmet>
+        <SEO postEdges={postEdges} />
+        <PostListing postEdges={postEdges} fileEdges={fileEdges} />
       </div>
     );
   }
 }
 
-export default Index;
+export default Blog;
 
 /* eslint no-undef: "off" */
 export const pageQuery = graphql`
-  query IndexQuery {
+  query BlogQuery {
     allFile {
       edges {
         node {

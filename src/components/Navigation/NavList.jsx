@@ -11,10 +11,17 @@ function GetNavList(config) {
       to: "/"
     },
     {
+      primaryText: "Blog",
+      leftIcon: <FontIcon>home</FontIcon>,
+      component: Link,
+      to: "/blog"
+    },
+    {
       divider: true
     }
   ];
 
+  /*
   if (config.userLinks) {
     config.userLinks.forEach(link => {
       NavList.push({
@@ -27,6 +34,7 @@ function GetNavList(config) {
   }
 
   NavList.push({ divider: true });
+  */
 
   NavList.push({
     primaryText: "About",
