@@ -2,4 +2,4 @@ User-agent: *
 Disallow: */tags/
 Disallow: */categories/
 
-sitemap: https://invalid-access.github.io/gatsby-material-starter/sitemap.xml
+sitemap: https://happy-lovelace-6606bb.netlify.com/gatsby-material-starter/sitemap.xml
